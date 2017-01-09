@@ -1,0 +1,27 @@
+{
+    "map": [
+        {
+            "estado":"SP",
+            "pontos": [
+                {"pontoDeOrigem":"A", "pontoDeDestino":"B", "distancia":10},
+                {"pontoDeOrigem":"B", "pontoDeDestino":"D", "distancia":15},
+                {"pontoDeOrigem":"A", "pontoDeDestino":"C", "distancia":20},
+                {"pontoDeOrigem":"C", "pontoDeDestino":"D", "distancia":30},
+                {"pontoDeOrigem":"B", "pontoDeDestino":"E", "distancia":50},
+                {"pontoDeOrigem":"D", "pontoDeDestino":"E", "distancia":30}
+            ]
+        },
+        {
+            "estado":"RJ",
+            "pontos": [
+                {"pontoDeOrigem":"A", "pontoDeDestino":"B", "distancia":10},
+                {"pontoDeOrigem":"B", "pontoDeDestino":"D", "distancia":15},
+                {"pontoDeOrigem":"A", "pontoDeDestino":"C", "distancia":20},
+                {"pontoDeOrigem":"C", "pontoDeDestino":"D", "distancia":30},
+                {"pontoDeOrigem":"B", "pontoDeDestino":"E", "distancia":50},
+                {"pontoDeOrigem":"D", "pontoDeDestino":"E", "distancia":30}
+            ]
+        }
+    ]
+
+}

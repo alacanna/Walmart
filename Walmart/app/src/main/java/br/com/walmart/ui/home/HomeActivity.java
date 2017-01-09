@@ -1,12 +1,19 @@
-package br.com.walmart;
+package br.com.walmart.ui.home;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Spinner;
+
+import br.com.walmart.R;
+import butterknife.BindView;
 
 public class HomeActivity extends AppCompatActivity {
+
+    @BindView(R.id.spn_map)
+    Spinner spnMap;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,7 +21,6 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
     }
 
     @Override
