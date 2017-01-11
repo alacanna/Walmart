@@ -9,11 +9,11 @@ import io.realm.RealmObject;
 
 public class PointModel extends RealmObject {
 
-    @SerializedName("originPoint")
+    @SerializedName("pontoDeOrigem")
     private String originPoint;
-    @SerializedName("destinationPoint")
+    @SerializedName("pontoDeDestino")
     private String destinationPoint;
-    @SerializedName("distance")
+    @SerializedName("distancia")
     private int distance;
 
 
