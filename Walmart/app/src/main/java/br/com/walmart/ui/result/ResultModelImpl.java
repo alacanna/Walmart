@@ -6,12 +6,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.walmart.exception.PathNotFoundException;
-import br.com.walmart.model.CalcModel;
+import br.com.walmart.model.ResultCalcModel;
 import br.com.walmart.model.DijkstraAlgorithm;
 import br.com.walmart.model.Edge;
 import br.com.walmart.model.Graph;
 import br.com.walmart.model.MapModel;
-import br.com.walmart.model.PontoModel;
+import br.com.walmart.model.PointModel;
 import br.com.walmart.model.Vertex;
 import io.realm.Realm;
 
@@ -34,10 +34,10 @@ public class ResultModelImpl implements ResultModel {
         MapModel mapModel = Realm.getDefaultInstance().where(MapModel.class).contains("map", "SP").findFirst();
         List<Edge> edges = new ArrayList<>();
 
-        for (PontoModel pontoModel : mapModel.getListaDePontos()) {
-            Edge edge = new Edge(new Vertex<>(pontoModel.getPontoDeOrigem()),
-                    new Vertex<>(pontoModel.getPontoDeDestino()),
-                    pontoModel.getDistancia());
+        for (PointModel pointModel : mapModel.getLstPoints()) {
+            Edge edge = new Edge(new Vertex<>(pointModel.getOriginPoint()),
+                    new Vertex<>(pointModel.getDestinationPoint()),
+                    pointModel.getDistance());
             edges.add(edge);
         }
 
@@ -45,41 +45,39 @@ public class ResultModelImpl implements ResultModel {
     }
 
     @Override
-    public CalcModel getResult(List<Edge> map,
-                               Vertex from,
-                               Vertex to,
-                               double autonomiaDoCaminhao,
-                               double valorPorLitro,
-                               String nameMap) {
+    public ResultCalcModel getResult(List<Edge> map,
+                                     Vertex from,
+                                     Vertex to,
+                                     double autonomiaDoCaminhao,
+                                     double valorPorLitro,
+                                     String nameMap) {
 
         try {
              dijkstraAlgorithm = new DijkstraAlgorithm(new Graph(map)).execute(from);
         } catch (PathNotFoundException e) {
-            presenter.onError("Erro ao executar o cálculo.");
             e.printStackTrace();
         }
 
-        CalcModel result = new CalcModel();
+        ResultCalcModel result = new ResultCalcModel();
 
-        result.setAutonomiaDoCaminhao(autonomiaDoCaminhao);
-        result.setValorPorLitro(valorPorLitro);
+        result.setTruckAut(autonomiaDoCaminhao);
+        result.setPrice(valorPorLitro);
         result.setMap(nameMap);
         result.setPontoDeOrigem(from.toString());
         result.setPontoDeOrigem(to.toString());
 
         try {
-            result.setSomaDistanciaMenorCaminho(dijkstraAlgorithm.getDistance(to));
+            result.setTotalDistance(dijkstraAlgorithm.getDistance(to));
         } catch (PathNotFoundException e) {
-            result.setSomaDistanciaMenorCaminho(0);
+            result.setTotalDistance(0);
             e.printStackTrace();
-            presenter.onError("Não foi possível calcular a distância");
         }
 
         try {
-            result.setCaminhoMaisCurto(dijkstraAlgorithm.getPathAndWeight(to));
+            result.setLstEdge(dijkstraAlgorithm.getPathAndWeight(to));
         } catch (PathNotFoundException e) {
-            result.setCaminhoMaisCurto(new ArrayList<Edge>());
-            presenter.onError("Não foi calcular o caminho.");
+            presenter.onError("Não foram encontradas rotas para esse percurso.");
+            result.setLstEdge(new ArrayList<Edge>());
             e.printStackTrace();
         }
 

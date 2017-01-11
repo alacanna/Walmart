@@ -2,7 +2,7 @@ package br.com.walmart.ui.result;
 
 import java.util.List;
 
-import br.com.walmart.model.CalcModel;
+import br.com.walmart.model.ResultCalcModel;
 import br.com.walmart.model.Edge;
 import br.com.walmart.model.Vertex;
 
@@ -12,10 +12,10 @@ import br.com.walmart.model.Vertex;
 
 public interface ResultModel {
     List<Edge> getMap(String map);
-    CalcModel getResult(List<Edge> map,
-                        Vertex from,
-                        Vertex to,
-                        double autonomiaDoCaminhao,
-                        double valorPorLitro,
-                        String nameMap);
+    ResultCalcModel getResult(List<Edge> map,
+                              Vertex from,
+                              Vertex to,
+                              double autonomiaDoCaminhao,
+                              double valorPorLitro,
+                              String nameMap);
 }

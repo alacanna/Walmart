@@ -17,7 +17,7 @@ public class MapModel extends RealmObject {
     private Long idMap;
 
     @SerializedName("pontos")
-    private RealmList<PontoModel> listaDePontos;
+    private RealmList<PointModel> lstPoints;
 
     @SerializedName("estado")
     private String map;
@@ -25,8 +25,8 @@ public class MapModel extends RealmObject {
     public MapModel() {
     }
 
-    public MapModel(RealmList<PontoModel> listaDePontos, String map) {
-        this.listaDePontos = listaDePontos;
+    public MapModel(RealmList<PointModel> lstPoints, String map) {
+        this.lstPoints = lstPoints;
         this.map = map;
     }
 
@@ -38,12 +38,12 @@ public class MapModel extends RealmObject {
         this.idMap = idMap;
     }
 
-    public List<PontoModel> getListaDePontos() {
-        return listaDePontos;
+    public List<PointModel> getLstPoints() {
+        return lstPoints;
     }
 
-    public void setListaDePontos(RealmList<PontoModel> listaDePontos) {
-        this.listaDePontos = listaDePontos;
+    public void setLstPoints(RealmList<PointModel> lstPoints) {
+        this.lstPoints = lstPoints;
     }
 
     public String getMap() {

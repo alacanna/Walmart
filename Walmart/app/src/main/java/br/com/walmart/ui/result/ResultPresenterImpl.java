@@ -23,7 +23,7 @@ public class ResultPresenterImpl implements ResultPresenter.ModelPresenter,Resul
 
     @Override
     public void onError(String message) {
-
+        mView.get().showMessageError(message);
     }
 
     @Override
@@ -37,6 +37,8 @@ public class ResultPresenterImpl implements ResultPresenter.ModelPresenter,Resul
                 mView.get().getIntent().getExtras().getDouble(Helper.VALOR),
                 mView.get().getIntent().getExtras().getString(Helper.MAP)
         ));
+
+        mView.get().hideProgress();
     }
 
 }

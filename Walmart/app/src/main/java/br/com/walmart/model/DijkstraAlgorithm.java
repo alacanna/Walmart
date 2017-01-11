@@ -21,20 +21,20 @@ public class DijkstraAlgorithm {
     private Set<Vertex> unSettledNodes;
     private Map<Vertex, Vertex> predecessors;
     private Map<Vertex, Integer> distance;
-    private Vertex source;
+    private Vertex originPoint;
 
     public DijkstraAlgorithm(Graph graph) {
         this.edges = new ArrayList<>(graph.getEdges());
     }
 
-    public DijkstraAlgorithm execute(Vertex source) throws PathNotFoundException {
-        this.source = source;
+    public DijkstraAlgorithm execute(Vertex originPoint) throws PathNotFoundException {
+        this.originPoint = originPoint;
         settledNodes = new HashSet<>();
         unSettledNodes = new HashSet<>();
         distance = new HashMap<>();
         predecessors = new HashMap<>();
-        distance.put(source, 0);
-        unSettledNodes.add(source);
+        distance.put(originPoint, 0);
+        unSettledNodes.add(originPoint);
         while (unSettledNodes.size() > 0) {
             Vertex node = getMinimum(unSettledNodes);
             settledNodes.add(node);
@@ -59,8 +59,8 @@ public class DijkstraAlgorithm {
     private List<Vertex> getNeighbors(Vertex node) {
         List<Vertex> neighbors = new ArrayList<>();
         for (Edge edge : edges) {
-            if (edge.getSource().equals(node) && !isSettled(edge.getDestination())) {
-                neighbors.add(edge.getDestination());
+            if (edge.getOriginPoint().equals(node) && !isSettled(edge.getDestinationPoint())) {
+                neighbors.add(edge.getDestinationPoint());
             }
         }
         return neighbors;
@@ -97,7 +97,7 @@ public class DijkstraAlgorithm {
 
         if (target != null) {
             LinkedList<Vertex> path = new LinkedList<>();
-            if (target.equals(source)) {
+            if (target.equals(originPoint)) {
                 path.add(target);
                 return path;
             }
@@ -129,8 +129,8 @@ public class DijkstraAlgorithm {
 
     private int getDistance(Vertex from, Vertex to) throws PathNotFoundException {
         for (Edge edge : edges) {
-            if (edge.getSource().equals(from) && edge.getDestination().equals(to)) {
-                return edge.getWeight();
+            if (edge.getOriginPoint().equals(from) && edge.getDestinationPoint().equals(to)) {
+                return edge.getDistance();
             }
         }
         throw new PathNotFoundException();

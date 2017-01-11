@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.walmart.model.MapModel;
-import br.com.walmart.model.PontoModel;
+import br.com.walmart.model.PointModel;
 import io.realm.Realm;
 import io.realm.RealmResults;
 
@@ -29,12 +29,12 @@ public class HomeModelImpl implements HomeModel {
 
     public List<String> originPointList(String map){
         MapModel mapModel = realm.where(MapModel.class).equalTo("map", map).findFirst();
-        List<PontoModel> listPoints = mapModel.getListaDePontos();
+        List<PointModel> listPoints = mapModel.getLstPoints();
         List<String> strPoint = new ArrayList<>();
 
-        for(PontoModel point : listPoints){
-            if(!strPoint.contains(point.getPontoDeOrigem()))
-                strPoint.add(point.getPontoDeOrigem());
+        for(PointModel point : listPoints){
+            if(!strPoint.contains(point.getOriginPoint()))
+                strPoint.add(point.getOriginPoint());
         }
 
         return strPoint;
@@ -43,12 +43,12 @@ public class HomeModelImpl implements HomeModel {
     @Override
     public List<String> destinationPointList(String map) {
         MapModel mapModel = realm.where(MapModel.class).equalTo("map", map).findFirst();
-        List<PontoModel> listPoints = mapModel.getListaDePontos();
+        List<PointModel> listPoints = mapModel.getLstPoints();
         List<String> strPoint = new ArrayList<>();
 
-        for(PontoModel point : listPoints){
-            if(!strPoint.contains(point.getPontoDeDestino()))
-                strPoint.add(point.getPontoDeDestino());
+        for(PointModel point : listPoints){
+            if(!strPoint.contains(point.getDestinationPoint()))
+                strPoint.add(point.getDestinationPoint());
         }
 
         return strPoint;

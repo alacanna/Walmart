@@ -6,31 +6,31 @@ package br.com.walmart.model;
 
 public class Edge {
 
-    private final Vertex source;
-    private final Vertex destination;
-    private final int weight;
+    private final Vertex originPoint;
+    private final Vertex destinationPoint;
+    private final int distance;
 
-    public Edge(Vertex source, Vertex destination, int weight) {
-        this.source = source;
-        this.destination = destination;
-        this.weight = weight;
+    public Edge(Vertex originPoint, Vertex destinationPoint, int distance) {
+        this.originPoint = originPoint;
+        this.destinationPoint = destinationPoint;
+        this.distance = distance;
     }
 
-    public Vertex getDestination() {
-        return destination;
+    public Vertex getDestinationPoint() {
+        return destinationPoint;
     }
 
-    public Vertex getSource() {
-        return source;
+    public Vertex getOriginPoint() {
+        return originPoint;
     }
 
-    public int getWeight() {
-        return weight;
+    public int getDistance() {
+        return distance;
     }
 
     @Override
     public String toString() {
-        return source + " -(" + weight + ")- " + destination;
+        return originPoint + " -(" + distance + ")- " + destinationPoint;
     }
 
 }

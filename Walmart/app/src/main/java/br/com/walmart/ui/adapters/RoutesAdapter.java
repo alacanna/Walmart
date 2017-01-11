@@ -1,6 +1,5 @@
 package br.com.walmart.ui.adapters;
 
-import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -53,13 +52,13 @@ public class RoutesAdapter extends RecyclerView.Adapter<RoutesAdapter.ViewHolder
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.txtVertexDestination.setVisibility(View.GONE);
-        holder.txtVertexOrigin.setText(map.get(position).getSource().toString());
+        holder.txtVertexOrigin.setText(map.get(position).getOriginPoint().toString());
 
-        holder.txtDistance.setText(String.format("%s Km",map.get(position).getWeight()));
+        holder.txtDistance.setText(String.format("%s Km",map.get(position).getDistance()));
 
         if(position == map.size()-1) {
             holder.txtVertexDestination.setVisibility(View.VISIBLE);
-            holder.txtVertexDestination.setText(map.get(position).getDestination().toString());
+            holder.txtVertexDestination.setText(map.get(position).getDestinationPoint().toString());
         }
 
 

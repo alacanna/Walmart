@@ -12,6 +12,7 @@ tools:context="br.com.walmart.ui.result.ResultActivity">
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:layout_above="@+id/ll_total"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -19,6 +20,7 @@ tools:context="br.com.walmart.ui.result.ResultActivity">
 
     >
     <TextView
+        android:id="@+id/txt_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="O Caminho mais curto para sua rota é:"
@@ -47,12 +49,13 @@ tools:context="br.com.walmart.ui.result.ResultActivity">
         android:layout_alignParentBottom="true"
         android:background="@color/colorAccent"
         android:padding="10dp"
+        android:id="@+id/ll_total"
         >
 
 
         <TextView
             android:id="@+id/txt_total"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:textStyle="bold"
             android:textSize="20sp"
@@ -63,4 +66,10 @@ tools:context="br.com.walmart.ui.result.ResultActivity">
 
 
     </LinearLayout>
+    <br.com.walmart.ui.view.MyProgressBar
+        android:id="@+id/progress"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        />
 </RelativeLayout>

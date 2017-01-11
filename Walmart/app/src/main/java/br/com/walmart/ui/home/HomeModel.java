@@ -3,7 +3,6 @@ package br.com.walmart.ui.home;
 import java.util.List;
 
 import br.com.walmart.model.MapModel;
-import br.com.walmart.model.PontoModel;
 import io.realm.RealmResults;
 
 /**
