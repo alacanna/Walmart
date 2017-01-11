@@ -10,31 +10,29 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 import br.com.walmart.R;
-import butterknife.BindView;
-import butterknife.ButterKnife;
+import br.com.walmart.model.MapModel;
 
 
-public class GenericSpinner<T> extends ArrayAdapter<T> {
-    public GenericSpinner(Context context, int resource) {
-        super(context, resource);
-    }
+public class MapSpinner extends ArrayAdapter<MapModel> {
 
-    private List<T> objList;
+    private List<MapModel> objList;
 
-    public GenericSpinner(Context context, List<T> objList) {
+    public MapSpinner(Context context, List<MapModel> objList) {
         super(context, R.layout.item_spinner, R.id.name, objList);
         this.objList = objList;
     }
 
     static class ViewHolder {
-        @BindView(R.id.name) TextView txtName;
+        //@BindView(R.id.name)
+         TextView txtName;
 
         public ViewHolder(View view) {
-            ButterKnife.bind(this, view);
+           // ButterKnife.bind(this, view);
+            txtName = (TextView)view.findViewById(R.id.name);
         }
     }
 
@@ -61,7 +59,7 @@ public class GenericSpinner<T> extends ArrayAdapter<T> {
         }
 
         // Populate the data into the template view using the data object
-        viewHolder.txtName.setText(((ArrayList<String>)objList).get(position));
+        viewHolder.txtName.setText(String.valueOf(objList.get(position).getMap()));
 
         // Return the completed view to render on screen
         return convertView;

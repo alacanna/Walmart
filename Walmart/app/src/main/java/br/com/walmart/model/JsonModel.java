@@ -4,6 +4,8 @@ import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
+import io.realm.RealmObject;
+
 /**
  * Created by amandalacanna on 1/8/17.
  */
@@ -20,10 +22,4 @@ public class JsonModel {
         this.map = map;
     }
 
-    @Override
-    public String toString() {
-        return "JsonModel{" +
-                "map=" + map +
-                '}';
-    }
 }

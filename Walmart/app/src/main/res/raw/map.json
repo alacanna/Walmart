@@ -1,6 +1,7 @@
 {
     "map": [
         {
+            "idMap":1,
             "estado":"SP",
             "pontos": [
                 {"pontoDeOrigem":"A", "pontoDeDestino":"B", "distancia":10},
@@ -12,14 +13,15 @@
             ]
         },
         {
+            "idMap":2,
             "estado":"RJ",
             "pontos": [
-                {"pontoDeOrigem":"A", "pontoDeDestino":"B", "distancia":10},
-                {"pontoDeOrigem":"B", "pontoDeDestino":"D", "distancia":15},
-                {"pontoDeOrigem":"A", "pontoDeDestino":"C", "distancia":20},
-                {"pontoDeOrigem":"C", "pontoDeDestino":"D", "distancia":30},
-                {"pontoDeOrigem":"B", "pontoDeDestino":"E", "distancia":50},
-                {"pontoDeOrigem":"D", "pontoDeDestino":"E", "distancia":30}
+                {"pontoDeOrigem":"C", "pontoDeDestino":"D", "distancia":10},
+                {"pontoDeOrigem":"D", "pontoDeDestino":"S", "distancia":15},
+                {"pontoDeOrigem":"T", "pontoDeDestino":"D", "distancia":20},
+                {"pontoDeOrigem":"G", "pontoDeDestino":"T", "distancia":30},
+                {"pontoDeOrigem":"V", "pontoDeDestino":"H", "distancia":50},
+                {"pontoDeOrigem":"A", "pontoDeDestino":"I", "distancia":30}
             ]
         }
     ]

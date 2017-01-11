@@ -8,17 +8,19 @@ import io.realm.RealmObject;
  */
 
 public class PontoModel extends RealmObject {
+
     @SerializedName("pontoDeOrigem")
     private String pontoDeOrigem;
     @SerializedName("pontoDeDestino")
     private String pontoDeDestino;
     @SerializedName("distancia")
-    private double distancia;
+    private int distancia;
+
 
     public PontoModel() {
     }
 
-    public PontoModel(String pontoDeOrigem, String pontoDeDestino, double distancia) {
+    public PontoModel(String pontoDeOrigem, String pontoDeDestino, int distancia) {
         this.pontoDeOrigem = pontoDeOrigem;
         this.pontoDeDestino = pontoDeDestino;
         this.distancia = distancia;
@@ -40,11 +42,20 @@ public class PontoModel extends RealmObject {
         this.pontoDeDestino = pontoDeDestino;
     }
 
-    public double getDistancia() {
+    public int getDistancia() {
         return distancia;
     }
 
-    public void setDistancia(double distancia) {
+    public void setDistancia(int distancia) {
         this.distancia = distancia;
+    }
+
+    @Override
+    public String toString() {
+        return "PontoModel{" +
+                "pontoDeOrigem='" + pontoDeOrigem + '\'' +
+                ", pontoDeDestino='" + pontoDeDestino + '\'' +
+                ", distancia=" + distancia +
+                '}';
     }
 }

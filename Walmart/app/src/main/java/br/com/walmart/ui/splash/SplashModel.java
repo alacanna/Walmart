@@ -6,5 +6,4 @@ package br.com.walmart.ui.splash;
 
 public interface SplashModel {
     void jsonPersist(String strJson);
-
 }

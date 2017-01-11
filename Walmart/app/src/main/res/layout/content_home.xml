@@ -19,7 +19,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Selecione uma rota para o cálculo."
+            android:text="@string/str_selecione_rota"
             android:textStyle="bold"
             />
 
@@ -32,58 +32,60 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Mapa:"
+            android:text="@string/str_mapa"
             />
 
         <Spinner
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:id="@+id/spn_map" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="De:"
+            android:text="@string/str_de"
             />
         <Spinner
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:id="@+id/spn_from" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Para:"
+            android:text="@string/str_para"
             />
         <Spinner
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:id="@+id/spn_to" />
         <EditText
+            android:id="@+id/edt_autonomia"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:hint="Autonomia (Km/l)"
+            android:inputType="numberDecimal"
+            android:hint="@string/str_autonomia"
             />
         <EditText
+            android:id="@+id/edt_valor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
-            android:hint="Valor litro (R$)"
+            android:inputType="numberDecimal"
+            android:hint="@string/str_valor_litro"
             />
 
         <Button
+            android:id="@+id/btn_go"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/colorAccent"
             android:textColor="@android:color/white"
-            android:text="Ir"/>
+            android:text="@string/str_ir"/>
 
     </LinearLayout>
-
-
-
 </android.support.v4.widget.NestedScrollView>

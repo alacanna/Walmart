@@ -1,10 +1,16 @@
 <resources>
     <string name="app_name">Walmart</string>
-    <string name="action_settings">Settings</string>
 
-    <string name="title_activity_splash">SplashActivity</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="title_activity_splash">Logistica</string>
+
+
+    <string name="str_autonomia">Autonomia (Km/l)</string>
+    <string name="str_valor_litro">Valor litro (R$)</string>
+    <string name="str_ir">Ir</string>
+    <string name="str_de">De:</string>
+    <string name="str_mapa">Mapa:</string>
+    <string name="str_selecione_rota">Selecione uma rota para o cálculo.</string>
+    <string name="str_para">Para:</string>
 
 
 </resources>

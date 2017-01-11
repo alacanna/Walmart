@@ -2,9 +2,6 @@ package br.com.walmart.ui.splash;
 
 import com.google.gson.Gson;
 
-import java.io.IOException;
-import java.io.InputStream;
-
 import br.com.walmart.model.JsonModel;
 import io.realm.Realm;
 
@@ -27,10 +24,8 @@ public class SplashModelImpl implements SplashModel {
 
         realm.executeTransactionAsync(new Realm.Transaction() {
             @Override public void execute(Realm realm) {
-
                 JsonModel json = new Gson().fromJson(strJson, JsonModel.class);
                 realm.insertOrUpdate(json.getMap());
-
             }
         }, new Realm.Transaction.OnSuccess() {
             @Override public void onSuccess() {

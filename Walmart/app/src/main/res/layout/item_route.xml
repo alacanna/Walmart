@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    >
+
+    <TextView
+        android:id="@+id/txt_vertex_ori"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:text="A"
+        android:gravity="center"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/shape_circle"
+        />
+
+    <RelativeLayout
+        android:id="@+id/rl_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_vertex_ori"
+        android:layout_centerInParent="true"
+        >
+    <LinearLayout
+        android:id="@+id/ll_distance"
+        android:layout_width="1px"
+        android:layout_height="50dp"
+        android:background="#888"
+        android:orientation="vertical"
+        android:layout_centerHorizontal="true"
+        />
+
+    <TextView
+        android:id="@+id/txt_distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="20km"
+        android:gravity="center"
+        android:layout_alignLeft="@id/ll_distance"
+        android:layout_marginLeft="10dp"
+        android:layout_centerVertical="true"
+        />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/txt_vertex_dest"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:text="A"
+        android:gravity="center"
+        android:visibility="gone"
+        android:layout_below="@id/rl_container"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/shape_circle"
+        />
+
+</RelativeLayout>

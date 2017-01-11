@@ -12,6 +12,11 @@ import br.com.walmart.R;
  */
 
 public final class Helper {
+    public static final String AUTONOMIA = "AUTONOMIA";
+    public static final String VALOR = "VALOR";
+    public static final String ORIGIN_POINT = "ORIGIN_POINT";
+    public static final String DESTINATION_POINT = "DESTINATION_POINT";
+    public static final String MAP = "MAP";
 
     public static String loadJsonFromRaw(Resources res){
         String json = null;

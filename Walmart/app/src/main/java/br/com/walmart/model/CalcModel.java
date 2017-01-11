@@ -1,19 +1,60 @@
 package br.com.walmart.model;
 
+
+import java.io.Serializable;
+import java.util.List;
+
 /**
  * Created by amandalacanna on 1/8/17.
  */
 
-public class CalcModel {
+public class CalcModel implements Serializable{
+    public static final long  serialVersionUID = 1L;
+
+    private List<Edge> caminhoMaisCurto;
+    private String map;
+    private String pontoDeOrigem;
+    private String pontoDeDestino;
 
     private double autonomiaDoCaminhao;
-    private double somaDistanciaMenorCaminho;
+    private int somaDistanciaMenorCaminho;
     private double valorPorLitro;
 
-    public CalcModel(double autonomiaDoCaminhao, double somaDistanciaMenorCaminho, double valorPorLitro) {
-        this.autonomiaDoCaminhao = autonomiaDoCaminhao;
-        this.somaDistanciaMenorCaminho = somaDistanciaMenorCaminho;
-        this.valorPorLitro = valorPorLitro;
+    private double custo;
+
+    public CalcModel() {
+    }
+
+    public String getMap() {
+        return map;
+    }
+
+    public void setMap(String map) {
+        this.map = map;
+    }
+
+    public List<Edge> getCaminhoMaisCurto() {
+        return caminhoMaisCurto;
+    }
+
+    public void setCaminhoMaisCurto(List<Edge> caminhoMaisCurto) {
+        this.caminhoMaisCurto = caminhoMaisCurto;
+    }
+
+    public String getPontoDeOrigem() {
+        return pontoDeOrigem;
+    }
+
+    public void setPontoDeOrigem(String pontoDeOrigem) {
+        this.pontoDeOrigem = pontoDeOrigem;
+    }
+
+    public String getPontoDeDestino() {
+        return pontoDeDestino;
+    }
+
+    public void setPontoDeDestino(String pontoDeDestino) {
+        this.pontoDeDestino = pontoDeDestino;
     }
 
     public double getAutonomiaDoCaminhao() {
@@ -24,11 +65,11 @@ public class CalcModel {
         this.autonomiaDoCaminhao = autonomiaDoCaminhao;
     }
 
-    public double getSomaDistanciaMenorCaminho() {
+    public int getSomaDistanciaMenorCaminho() {
         return somaDistanciaMenorCaminho;
     }
 
-    public void setSomaDistanciaMenorCaminho(double somaDistanciaMenorCaminho) {
+    public void setSomaDistanciaMenorCaminho(int somaDistanciaMenorCaminho) {
         this.somaDistanciaMenorCaminho = somaDistanciaMenorCaminho;
     }
 
@@ -40,7 +81,25 @@ public class CalcModel {
         this.valorPorLitro = valorPorLitro;
     }
 
-    double calculaCusto(){
+    public double getCusto() {
         return (somaDistanciaMenorCaminho/autonomiaDoCaminhao) * valorPorLitro;
+    }
+
+    public void setCusto(double custo) {
+        this.custo = custo;
+    }
+
+    @Override
+    public String toString() {
+        return "CalcModel{" +
+                "caminhoMaisCurto=" + caminhoMaisCurto +
+                ", map='" + map + '\'' +
+                ", pontoDeOrigem='" + pontoDeOrigem + '\'' +
+                ", pontoDeDestino='" + pontoDeDestino + '\'' +
+                ", autonomiaDoCaminhao=" + autonomiaDoCaminhao +
+                ", somaDistanciaMenorCaminho=" + somaDistanciaMenorCaminho +
+                ", valorPorLitro=" + valorPorLitro +
+                ", custo=" + custo +
+                '}';
     }
 }
