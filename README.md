@@ -49,3 +49,8 @@ Bibliotecas Utilizadas
 - [x] https://realm.io/docs/java/latest/ (para persistência de dados no aparelho):
 
 ## Usage
+Na pasta do projeto existe um arquivo chamado walmart.apk, faça download desse arquivo e coloque no seu aparelho android.
+A versão mínima suportada pelo projeto é SDK 17 Android 4.2.
+Execute o aplicativo e então já conseguirá efetuar os testes.
+
+Para alteração dos dados de teste é necessário alterar o arquivo map.json que está localizado (Walmart/Walmart/app/src/main/res/raw).Após alterar esse arquivo é necessário compilar o projeto novamente utilizando o Android Studio.
