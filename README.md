@@ -48,7 +48,7 @@ Bibliotecas Utilizadas
 - [x] http://jakewharton.github.io/butterknife/ (para injeção de dependencia)
 - [x] https://realm.io/docs/java/latest/ (para persistência de dados no aparelho):
 
-## Usage
+## Como testar?
 Na pasta do projeto existe um arquivo chamado walmart.apk, faça download desse arquivo e coloque no seu aparelho android.
 A versão mínima suportada pelo projeto é SDK 17 Android 4.2.
 Execute o aplicativo e então já conseguirá efetuar os testes.
